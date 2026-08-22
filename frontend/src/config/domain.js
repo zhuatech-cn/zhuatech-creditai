@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'CREDITAI',systemName:'知华企业信用智能管理平台',englishName:'AI CREDIT MANAGEMENT',theme:{primary:'#52627a',dark:'#2a3445',accent:'#c68a48'},workspace:'集团财务 / 信用管理中心',fieldWorkspace:'华东区域 / 信用分析组',period:'2026-08-19 · 日内评估',liveText:'应收与外部信用数据于 10:36 更新',fieldContextLabel:'评估批次',fieldContext:'华东经销商 · 年度复评',fieldUser:'唐悦',fieldRole:'信用分析师',adminUser:'孟川',adminRole:'信用管理负责人',
  adminTitle:'企业信用风险控制中心',adminBreadcrumb:'集团财务 / 智能信用',adminSubtitle:'结合营收、应收、逾期、付款历史和外部风险，为 B2B 客户生成可解释的额度与账期建议。',exportAction:'导出信用报告',createAction:'新建评估任务',chartTitle:'信用评估完成趋势',chartSubtitle:'实际完成率 / 评估目标',chartLabels:['01日','04日','07日','10日','13日','16日','19日','22日','25日'],loadTitle:'客户组合风险负荷',loadSubtitle:'待评客户占分析团队容量',recordsTitle:'重点信用评估任务',recordsSubtitle:'按逾期、敞口和额度影响排序',issueTitle:'信用风险事件',issueSubtitle:'需要财务、销售或风险委员会确认',

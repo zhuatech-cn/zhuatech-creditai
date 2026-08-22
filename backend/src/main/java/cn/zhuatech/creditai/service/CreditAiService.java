@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.creditai.service;
 import cn.zhuatech.creditai.common.BusinessException; import cn.zhuatech.creditai.dto.CreditAiDto.*; import cn.zhuatech.creditai.model.*; import cn.zhuatech.creditai.repository.*; import org.springframework.stereotype.Service; import org.springframework.transaction.annotation.Transactional; import java.util.*;
 @Service @Transactional(readOnly=true) public class CreditAiService {

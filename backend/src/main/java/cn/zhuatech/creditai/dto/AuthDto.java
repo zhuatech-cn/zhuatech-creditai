@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.creditai.dto;
 import cn.zhuatech.creditai.model.UserAccount; import jakarta.validation.constraints.NotBlank;
 public final class AuthDto {
