@@ -54,3 +54,15 @@ npm run dev:demo
 | ![微信咨询一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 搜索关键词：企业信用管理、客户信用评分、授信额度、应收账款风控、Java AI 源码、知华科技。
+
+
+## 2026 企业级热度项目升级
+
+本次根据公开仓库访问热度补充 **信用额度政策与双人审批**：综合风险评分、逾期、营收、敞口、抵押物和销售例外计算政策额度、可用额度与审批路线。
+
+- 企业 API：`POST /api/enterprise/credit/limit-governance`
+- 决策输出：执行许可、量化指标、阻断/升级路线、控制清单
+- 可审计性：规则确定、输入输出可留痕，并附正常与阻断场景测试
+- AI 接入：预留 DeepSeek-compatible 建议层配置，AI 不直接绕过审批或改变正式业务状态
+
+详细设计见 [企业级升级说明](docs/ENTERPRISE_UPGRADE.md)。深度开发、企业部署和系统集成请联系[知华科技（上海如静知华信息科技有限公司）](https://www.zhuatech.cn/)。
