@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.creditai.config;
 import cn.zhuatech.creditai.model.*; import cn.zhuatech.creditai.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
-@Configuration public class DataInitializer {@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository tasks,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@Configuration public class DataInitializer {/**
+                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                              */
+@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository tasks,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
  var u1=units.save(new OperatingUnit("CREDIT-CENTER","信用管理中心","集团财务",320));var u2=units.save(new OperatingUnit("EAST-CREDIT","华东信用组","区域财务",180));var u3=units.save(new OperatingUnit("RISK-COMMITTEE","风险审批组","集团风控",80));
  var t1=tasks.save(new WorkRecord("CR-260819-118","CUS-88621","华东经销商年度授信",u2,120,78,9,LocalDate.now(),WorkRecord.Status.RUNNING,"年度复评"));var t2=tasks.save(new WorkRecord("CR-260819-112","CUS-88576","新客户首笔账期",u1,80,52,4,LocalDate.now(),WorkRecord.Status.RUNNING,"新客准入"));var t3=tasks.save(new WorkRecord("CR-260819-106","CUS-46218","大额额度调整申请",u3,60,26,12,LocalDate.now(),WorkRecord.Status.RELEASED,"高额审批"));var t4=tasks.save(new WorkRecord("CR-260819-099","CUS-88492","稳定客户例行复评",u2,90,90,1,LocalDate.now(),WorkRecord.Status.COMPLETED,"低风险"));
  resources.saveAll(List.of(new ResourceRegister("AR-01","应收账款数据源",u1,ResourceRegister.Status.RUNNING,99),new ResourceRegister("BUREAU-02","外部信用连接器",u1,ResourceRegister.Status.RUNNING,96),new ResourceRegister("LIMIT-03","额度规则引擎",u3,ResourceRegister.Status.ALARM,90)));reviews.saveAll(List.of(new ReviewRecord("RV-260819-032",t3,"额度审批",60,12,ReviewRecord.Result.PENDING,"孟川"),new ReviewRecord("RV-260819-027",t4,"例行复评",90,1,ReviewRecord.Result.PASSED,"唐悦"),new ReviewRecord("RV-260819-018",t1,"逾期复核",120,9,ReviewRecord.Result.FAILED,"孟川")));

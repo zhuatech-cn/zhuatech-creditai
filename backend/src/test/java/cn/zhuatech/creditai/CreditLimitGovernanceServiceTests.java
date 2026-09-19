@@ -8,9 +8,15 @@ import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class CreditLimitGovernanceServiceTests {
     private final CreditLimitGovernanceService service = new CreditLimitGovernanceService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void blocksSeverelyOverdueCustomer() {
         var result = service.govern(new CreditLimitGovernanceService.Request("CUS-01",
                 new BigDecimal("10000000"), new BigDecimal("100000"), new BigDecimal("300000"),
@@ -19,6 +25,9 @@ class CreditLimitGovernanceServiceTests {
         assertThat(result.approved()).isFalse();
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void permitsDualApprovedControlledOverride() {
         var result = service.govern(new CreditLimitGovernanceService.Request("CUS-02",
                 new BigDecimal("10000000"), new BigDecimal("100000"), new BigDecimal("700000"),

@@ -12,9 +12,16 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 为 B2B 客户提供可解释的信用风险与额度建议。 */
+/**
+ * 为 B2B 客户提供可解释的信用风险与额度建议。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CreditAnalysisService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         BigDecimal exposureRate = request.outstandingReceivable().divide(request.annualRevenue(), 4, RoundingMode.HALF_UP);
         int score = Math.round(request.externalRiskScore() * 0.35f);
@@ -40,12 +47,18 @@ public class CreditAnalysisService {
             reasons, suggestedLimit.compareTo(new BigDecimal("500000")) > 0 || score >= 40);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String customerCode,
                           @DecimalMin("0.01") BigDecimal annualRevenue,
                           @DecimalMin("0") BigDecimal outstandingReceivable,
                           @Min(0) int overdueDays, @Min(0) int latePayments12Months,
                           @Min(0) int yearsInBusiness,
                           @Min(0) @Max(100) int externalRiskScore) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String customerCode, int creditRiskScore, String riskLevel,
                          BigDecimal suggestedAvailableLimit, String paymentTerm,
                          List<String> reasons, boolean approvalRequired) {}

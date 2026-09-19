@@ -12,9 +12,16 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 企业信用额度治理，销售例外不得绕过财务与风险双人审批。 */
+/**
+ * 企业信用额度治理，销售例外不得绕过财务与风险双人审批。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CreditLimitGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Decision govern(Request request) {
         BigDecimal revenueFactor = request.riskScore() >= 70 ? new BigDecimal("0.02")
                 : request.riskScore() >= 40 ? new BigDecimal("0.05") : new BigDecimal("0.10");
@@ -42,6 +49,9 @@ public class CreditLimitGovernanceService {
                 dualApprovalRequired, approved, List.copyOf(reasons));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String customerCode,
                           @DecimalMin("0.01") BigDecimal annualRevenue,
                           @DecimalMin("0") BigDecimal currentExposure,
@@ -51,6 +61,9 @@ public class CreditLimitGovernanceService {
                           boolean salesOverrideRequested, boolean financeApproved,
                           boolean riskApproved) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Decision(String customerCode, BigDecimal policyLimit,
                            BigDecimal availableLimit, String route,
                            boolean dualApprovalRequired, boolean approved,
